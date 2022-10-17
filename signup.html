@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGN IN</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet"  >
+    <style>
+        /* For small screen */
+        @media screen and (max-width:576px){
+            body{
+                background-image:url("bg.jpg");
+                background-size:auto;
+            }
+            .container{
+                margin-top:30%;
+                border-radius: 10px;
+                box-shadow:0px 0px 8px 0px beige;
+                width:75%;
+                background-color:rgba(0, 0, 0, 0.5);            
+            }
+            h1{
+                color:aqua;
+            }   
+        }
+        /* For large screen */
+        @media screen and (min-width:576px){
+            body{
+                background-image:url("bg1.jpg");
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            .container{
+                border-radius: 10px;
+                background-color:rgba(10, 11, 15, 0.24);
+                box-shadow:0px 0px 8px 0px beige;
+                width:28%;
+                padding: 1%;
+                margin-left:45%;
+                margin-top: 10%;
+            }
+            h1{
+                color:azure;
+            } 
+            
+        }
+        a:link,b{      
+             color:darkblue;
+             text-decoration: none;
+        }                
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <br>
+        <center>
+            <h1>SIGN IN</h1>
+        </center>
+        <form action="https://www.flipkart.com/">
+            <br>
+    
+            <div class="input-group form-group">
+                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                <input type="text" class="form-control" placeholder="Username" required>
+            </div>
+            <div class="input-group form-group">
+                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                <input type="password" class="form-control" placeholder="Password" required>
+            </div>
+            <br>
+            <center>
+            <h6><input type="submit" value=" SIGN IN " class="bg-success text-white "  ></h6>
+            <br>
+            
+            <a href="otp.html"> <h5>Forgot password?</h5></a>
+            <hr color="black"></hr>
+            <b class="text-white ">Don't have an account ? </b>
+            <a href="register.html" ><b>Create one</b></a>
+            </center>
+            <br>
+        </form>
+    </div>
+</body>
+</html>

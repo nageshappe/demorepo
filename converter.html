@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converter</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet" >
+    <style>
+        body{
+            background-image:url("https://images.laws.com/finance/standard-deviation-calculator.jpg");
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .container{
+            margin-top:5%;
+            background-color:#0000cd2d;
+            box-shadow:0px 0px 20px 0px beige;
+            width:70%; 
+            align-items: center;
+            color:white;
+            font-weight:bolder;
+        }
+        .row,.column{
+            margin:3%;
+        }
+        button{
+            color:darkblue;
+            font-style:bold;
+        }
+        button:hover{
+            background-color: azure ;
+            border-radius:12px;
+        }
+        h1{
+            color:azure;
+            margin-top:4%;
+        }
+        .c{
+            font-size: 120%;
+            margin-left:42%;
+        }
+    </style>
+</head>
+<body>
+    <h1 align="center" >Currency Converter</h1>
+    <div class="container">
+       <div class="row">
+            <div class="column">
+                <div>Amount</div>
+                <div><input type="text" id="from_amount"  class="form-control" value=1 ></div>
+            </div>
+            <div class="column">
+                <div>From</div>
+                <div>
+                    <select name="convert" id="convert" class="form-control">
+                        <option value="I">INR-Indian Rupee</option>
+                        <option value="U">USD-US Dollar</option>
+                        <option value="G">GBP-British Pound</option>
+                        <option value="E">EUR-Euro</option>
+                    </select>
+                </div>
+            </div>
+            <div class="column">
+                <div>&nbsp; </div>
+                <div><span class="input-group-text"><i class="fas fa-exchange-alt"></i></span></div>
+            </div>
+            <div class="column">
+                <div>To</div>
+                <div>
+                    <select name="to" id="to" class="form-control">
+                        <option value="I">INR-Indian Rupee</option>
+                        <option value="U">USD-US Dollar</option>
+                        <option value="G">GBP-British Pound</option>
+                        <option value="E">EUR-Euro</option>
+                    </select>
+                </div>
+            </div>
+            <div class="column">
+                <div>Convert</div>
+                <button class="form-control fa fa-arrow-right" onclick="convertTo();"> </button>
+            </div>
+            <div class="column c">
+                <div  id="to_amount"  value=1>0</div>
+            </div>
+       </div>
+    </div>
+    <script>
+        function convertTo(){
+            fa= document.getElementById("from_amount").value;
+            res=fa;
+            v=fa;
+            ca=document.getElementById("convert").value;//convert 
+            ta=document.getElementById("to").value;//to
+            if(ca=="I"){
+                if(ta=="U"){
+                    res*=0.0135271;
+                    document.getElementById("to_amount").innerHTML=v+" INR"+" = "+res+" USD";
+                }
+                else if(ta=="G"){
+                    res*=0.0103772;
+                    document.getElementById("to_amount").innerHTML=v+" INR"+" = "+res+" GBP";
+                }
+                else if(ta=="E"){
+                    res*=0.0114745;
+                    document.getElementById("to_amount").innerHTML=v+" INR"+" = "+res+" EUR";
+                }
+                else{
+                    document.getElementById("to_amount").innerHTML=v+" INR"+" = "+res+" INR";
+                }
+            }
+            else if(ca=="U"){
+                if(ta=="I"){
+                    res*=73.9230;
+                    document.getElementById("to_amount").innerHTML=v+" USD"+" = "+res+" INR";
+                }
+                else if(ta=="G"){
+                    res*=0.766809 ;
+                    document.getElementById("to_amount").innerHTML=v+" USD"+" = "+res+" GBP";
+                }
+                else if(ta=="E"){
+                    res*=0.847915;
+                    document.getElementById("to_amount").innerHTML=v+" USD"+" = "+res+" EUR";
+                }
+                else
+                document.getElementById("to_amount").innerHTML=v+" USD"+" = "+res+" USD";
+            }
+            else if(ca=="G"){
+                if(ta=="I"){
+                    res*=96.4024;
+                    document.getElementById("to_amount").innerHTML=v+" GBP"+" = "+res+" INR";
+                }
+                else if(ta=="U"){
+                    res*=1.30447;
+                    document.getElementById("to_amount").innerHTML=v+" GBP"+" = "+res+" USD";
+                }
+                else if(ta=="E"){
+                    res*=1.10547;
+                    document.getElementById("to_amount").innerHTML=v+" GBP"+" = "+res+" EUR";
+                }
+                else
+                     document.getElementById("to_amount").innerHTML=v+" GBP"+" = "+res+" GBP";
+            } 
+            else{
+                if(ta=="I"){
+                    res*=87.1959;
+                    document.getElementById("to_amount").innerHTML=v+" EUR"+" = "+res+" INR";
+                }
+                else if(ta=="U"){
+                    res*=1.17997;
+                    document.getElementById("to_amount").innerHTML=v+" EUR"+" = "+res+" USD";
+                }
+                else if(ta=="G"){
+                    res*=0.904853;
+                    document.getElementById("to_amount").innerHTML=v+" EUR"+" = "+res+" GBP";
+                }
+                else
+                    document.getElementById("to_amount").innerHTML=v+" EUR"+" = "+res+" EUR";
+            } 
+        }
+    </script> 
+</body>
+</html>

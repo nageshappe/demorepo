@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet" >
+    <style>
+        body{
+            background-image:url("https://images.laws.com/finance/standard-deviation-calculator.jpg");
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .container{
+            margin-top:4%;
+            width:40%;
+            background-color:#0000cd2d;
+            box-shadow:0px 0px 20px 0px beige;
+            padding:1%;
+        }
+        .row{
+            margin:3%;
+        }
+        button{
+            color:blue;
+            font-style:italic;
+            
+        }
+        button:hover{
+            background-color: azure ;
+            border-radius:12px;
+        }
+        #res {
+            font-size:240%;
+            vertical-align: bottom;
+            text-align: right;
+            padding-right: 2%;
+        }
+        .form-control {
+            height: 60px;
+        }
+        h1{
+            color:aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h1 align="center">Calculator <i style="color:azure;" class="fa fa-calculator"></i></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div id="res" class="form-control">0</div>
+            </div> 
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <button onclick="insert(this);" class="form-control">1</button>
+            </div>
+            <div class="col-2">
+                <button onclick="insert(this);" class="form-control">2</button>
+            </div>
+            <div class="col-2">
+                <button onclick="insert(this);" class="form-control">3</button>
+            </div>
+            <div class="col-3">
+                <button onclick="insert(this);"  class="form-control bg-primary text-white">AC</button>
+            </div> 
+            <div class="col-3">
+                <button  onclick="remove();" class="form-control fa fa-arrow-left"> </button>
+            </div>             
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <button  onclick="insert(this);" class="form-control">4</button>
+            </div>
+            <div class="col-2">
+                <button  onclick="insert(this);" class="form-control">5</button>
+            </div>
+            <div class="col-2">
+                <button  onclick="insert(this);" class="form-control">6</button>
+            </div>
+            <div class="col-3">
+                <button onclick="insert(this);" class="form-control">+</button>
+            </div> 
+            <div class="col-3">
+                <button  onclick="insert(this);" class="form-control">*</button>
+            </div>
+           
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <button  onclick="insert(this);" class="form-control">7</button>
+            </div>
+            <div class="col-2">
+                <button  onclick="insert(this);" class="form-control">8</button>
+            </div>
+            <div class="col-2">
+                <button  onclick="insert(this);" class="form-control">9</button>
+            </div>
+            <div class="col-3">
+                <button  onclick="insert(this);" class="form-control">-</button>
+            </div>
+            <div class="col-3">
+                <button onclick="insert(this);"  class="form-control">/</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <button onclick="insert(this);"  class="form-control">.</button>
+            </div> 
+            <div class="col-2">
+                <button onclick="insert(this);"  class="form-control">0</button>
+            </div>
+            
+            <div class="col-5">
+                <button  onclick="insert(this);" class="form-control">=</button>
+            </div>  
+            <div class="col-3">
+                <button onclick="insert(this);"  class="form-control">%</button>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var v= document.getElementById('res');
+        function insert(object){
+            var a = object.innerHTML; 
+            if(a== "=")   
+                v.innerHTML = eval(v.innerHTML);
+            else if(a == "AC")
+                v.innerHTML ='0';
+            else{
+                if (v.innerHTML == '0') 
+                    v.innerHTML = a; 
+                else
+                    v.innerHTML += a;  
+            }
+        }
+        function remove(){
+           v.innerHTML=v.innerHTML.substring(0,v.innerHTML.length-1);
+        }
+    </script>
+</body>
+</html>
